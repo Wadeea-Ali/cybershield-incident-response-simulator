@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    background-color: lightblue;
+}
+
+h1{
+    text-align:center;
+}
+h2{
+    text-align:center;
+}
+#game-description{
+    text-align: center;
+}
+.hidden{
+    display:none;
+}

@@ -1,153 +1,156 @@
-# cybershield-incident-response-simulator
-A web-based cybersecurity simulation game where players respond to real-world security incidents and protect the company from cyber threats.
+# 🛡️ CyberShield: Incident Response Simulator
 
+## Pseudocode
 
-START 
+### Start
 
+- Create three difficulty levels:
+  - Easy
+  - Medium
+  - Hard
 
+- Create **20 cybersecurity incidents** for each difficulty level.
 
+- Each incident contains:
+  - Incident description
+  - Four answer choices
+  - Correct answer
 
-Create three difficulty levels: 
-Easy 
-Medium 
-Hard 
+### Create Variables
 
+- Score
+- Current Incident
+- Selected Difficulty
+- Timer
+- Incident Number
 
-Create 20 cybersecurity incidents for each difficulty level. 
-Each incident contains: 
-Incident description 
-Four answer choices 
-Correct answer 
+### Start Screen
 
+- Display the Start Screen.
+- Display the three difficulty levels:
+  - Easy
+  - Medium
+  - Hard
+- Wait for the player to select a difficulty.
 
-Create variables: 
-Score 
-Current incident 
-Selected difficulty 
-Timer 
-Incident number 
+### When a Difficulty is Selected
 
+- Save the selected difficulty.
+- Load the 20 incidents for the selected difficulty.
+- Shuffle the incidents into a random order.
+- Set the score to **0**.
+- Set the incident number to **1**.
+- Display the first incident.
 
-Display the Start Screen. 
+---
 
+## Game Loop
 
-Display three difficulty options: 
-Easy 
-Medium 
-Hard 
+### For Each Incident
 
+Display:
 
-Wait for the player to select a difficulty. 
+- Incident description
+- Four answer choices
+- Current score
+- **Security Incident X of 20**
 
+### Set Timer
 
-When the player selects a difficulty: 
-Save the selected difficulty. 
-Load the 20 incidents for that difficulty. 
-Shuffle the incidents into a random order. 
-Set the score to 0. 
-Set the incident number to 1. 
-Display the first incident. 
+- Easy → 20 seconds
+- Medium → 15 seconds
+- Hard → 10 seconds
 
+Start the timer.
 
-FOR EACH INCIDENT: 
+Wait for the player to select an answer.
 
+### If the Player Answers Before Time Runs Out
 
-Display: 
-Incident description 
-Four answer choices 
-Current score 
-"Security Incident [current number] of 20" 
+Stop the timer.
 
+#### If the answer is correct:
 
-    Set the timer based on the selected difficulty: 
- 
-        If Easy: 
-            Set timer to 20 seconds. 
- 
-        If Medium: 
-            Set timer to 15 seconds. 
- 
-        If Hard: 
-            Set timer to 10 seconds. 
- 
-    Start the timer. 
- 
-    Wait for the player to choose an answer. 
- 
-    IF the player selects an answer before the timer reaches zero: 
- 
-        Stop the timer. 
- 
-        IF the selected answer is correct: 
- 
-            Increase the score by 1. 
- 
- 
- 
- 
-            Display: 
-                "Incident Resolved" 
- 
-            Play the correct-answer sound. 
- 
-        ELSE: 
- 
-            Display: 
-                "Security Breach" 
- 
-            Play the incorrect-answer sound. 
- 
-    ELSE IF the timer reaches zero: 
- 
-        Display: 
-            "Time's Up! Threat Escalated" 
- 
-        Play the incorrect-answer sound. 
- 
-    Disable the answer choices. 
- 
-    Display the Next Incident button. 
- 
-    When the player clicks the Next Incident button: 
- 
-        Increase the incident number by 1. 
- 
-        IF there are incidents remaining: 
- 
-            Reset the timer. 
- 
-            Display the next incident. 
- 
-        ELSE: 
- 
-            End the game. 
- 
-END GAME: 
- 
-    Stop the timer. 
- 
-    Display: 
-        Final score out of 20. 
- 
-    IF the score is 14 or higher: 
- 
-        Display: 
-            "Mission Successful!" 
-            "Company Secured" 
- 
-    ELSE: 
- 
-Display: 
-"Mission Failed!" 
-"Company Compromised" 
-Display the Restart button. 
-When the player clicks the Restart button: 
-Reset the score. 
-Reset the incident number. 
-Reset the timer. 
-Return to the difficulty selection screen. 
+- Increase the score by **1**.
+- Display:
 
+```
+✅ Incident Resolved
+```
 
+- Play the correct-answer sound.
 
+#### Otherwise:
 
-END
+- Display:
+
+```
+🚨 Security Breach
+```
+
+- Play the incorrect-answer sound.
+
+### If the Timer Reaches Zero
+
+Display:
+
+```
+⏰ Time's Up! Threat Escalated
+```
+
+- Play the incorrect-answer sound.
+
+### Continue
+
+- Disable the answer choices.
+- Display the **Next Incident** button.
+
+When the player clicks **Next Incident**:
+
+- Increase the incident number by **1**.
+
+If there are incidents remaining:
+
+- Reset the timer.
+- Display the next incident.
+
+Otherwise:
+
+- End the game.
+
+---
+
+# End Game
+
+Stop the timer.
+
+Display the player's final score out of **20**.
+
+### Win Condition
+
+If the player scores **14 or more**:
+
+```
+🏆 Mission Successful!
+Company Secured
+```
+
+### Lose Condition
+
+Otherwise:
+
+```
+💀 Mission Failed!
+Company Compromised
+```
+
+Display the **Restart** button.
+
+When the player clicks **Restart**:
+
+- Reset the score.
+- Reset the incident number.
+- Reset the timer.
+- Return to the difficulty selection screen.
+
+## End

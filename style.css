@@ -1,17 +1,269 @@
-*{
-    box-sizing: border-box;
-    background-color: lightblue;
+* {
+  box-sizing: border-box;
 }
 
-h1{
-    text-align:center;
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #07131f;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-h2{
-    text-align:center;
+
+.game-container {
+  width: 100%;
+  max-width: 900px;
 }
-#game-description{
-    text-align: center;
+
+.screen {
+  background-color: #0d2233;
+  border: 1px solid #1e4f6b;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
-.hidden{
-    display:none;
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-size: 48px;
+  color: #2dd4ff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+h3 {
+  margin-top: 30px;
+  text-align: center;
+  color: #a9c4d4;
+}
+
+#game-description {
+  max-width: 650px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 1.6;
+  color: #c4d7e3;
+}
+
+/* Difficulty buttons */
+
+.difficulty-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.difficulty-btn {
+  min-width: 140px;
+  padding: 15px 20px;
+  border: 1px solid #2dd4ff;
+  border-radius: 8px;
+  background-color: #102c40;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.difficulty-btn:hover {
+  background-color: #17425d;
+}
+
+#easy-btn {
+  border-color: #37e68a;
+}
+
+#medium-btn {
+  border-color: #ffc857;
+}
+
+#hard-btn {
+  border-color: #ff5f6d;
+}
+
+/* Game information */
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.game-header p {
+  flex: 1;
+  margin: 0;
+  padding: 15px;
+  border: 1px solid #1e4f6b;
+  border-radius: 8px;
+  background-color: #081b29;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: bold;
+  text-align: center;
+}
+
+#incident-number {
+  color: #2dd4ff;
+}
+
+#score-display {
+  color: #37e68a;
+}
+
+#timer-display {
+  color: #ffc857;
+}
+
+/* Incident area */
+
+.incident-card {
+  padding: 28px;
+  border: 1px solid #1e4f6b;
+  border-radius: 10px;
+  background-color: #081b29;
+}
+
+#priority-display {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 8px 14px;
+  border: 1px solid #ff5f6d;
+  border-radius: 20px;
+  color: #ff8791;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: bold;
+}
+
+#incident-question {
+  margin: 10px 0 28px;
+  text-align: left;
+  font-size: 26px;
+  line-height: 1.5;
+}
+
+/* Answers */
+
+#answer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.answer-btn {
+  min-height: 85px;
+  padding: 16px;
+  border: 1px solid #2c617d;
+  border-radius: 8px;
+  background-color: #102c40;
+  color: white;
+  font-size: 17px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+
+.answer-btn:hover:not(:disabled) {
+  border-color: #2dd4ff;
+  background-color: #17425d;
+}
+
+.answer-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Feedback */
+
+#feedback-message {
+  min-height: 32px;
+  margin: 22px 0 5px;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.correct-feedback {
+  color: #37e68a;
+}
+
+.wrong-feedback {
+  color: #ff5f6d;
+}
+
+.timeout-feedback {
+  color: #ffc857;
+}
+
+/* Action buttons */
+
+#next-btn,
+#restart-btn {
+  margin-top: 20px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: #37e68a;
+  color: #06130c;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#next-btn:hover,
+#restart-btn:hover {
+  opacity: 0.85;
+}
+
+/* End screen */
+
+#final-message {
+  font-size: 34px;
+  color: #2dd4ff;
+}
+
+#final-score {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* Utility */
+
+.hidden {
+  display: none;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .screen {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .difficulty-buttons,
+  .game-header {
+    flex-direction: column;
+  }
+
+  #answer-container {
+    grid-template-columns: 1fr;
+  }
+
+  #incident-question {
+    font-size: 21px;
+  }
 }

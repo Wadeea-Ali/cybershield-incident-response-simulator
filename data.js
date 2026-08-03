@@ -218,6 +218,152 @@ const mediumIncidents = [
     ],
 
     correctChoice: 1
+  },
+  {
+    title: "Data Exfiltration",
+
+    question:
+      "You suspect that sensitive data is being exfiltrated from your organization. What should you do?",
+    choices: [
+      "Ignore the suspicion",
+      "Document the behavior and report it to management",
+      "Confront the employee directly",
+      "Fire the employee immediately"
+    ],
+    correctChoice: 1              
+
+  } ,{
+    title: "Man-in-the-Middle Attack",
+
+    question:
+      "You suspect your organization is under a Man-in-the-Middle attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1    
+  },{
+    title: "SQL Injection Attack",
+
+    question:
+      "You suspect your organization is under a SQL Injection attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  } ,{
+    title: "Cross-Site Scripting (XSS) Attack",
+
+    question:
+      "You suspect your organization is under a Cross-Site Scripting (XSS) attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  } ,{
+    title: "Privilege Escalation Attack",
+
+    question:
+      "You suspect your organization is under a Privilege Escalation attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  } ,{
+    title: "Denial of Service (DoS) Attack",
+
+    question:
+      "You suspect your organization is under a Denial of Service (DoS) attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  } ,{
+    title: "Ransomware Attack",
+
+    question:
+      "You suspect your organization is under a Ransomware attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  } ,{
+    title: "Insider Threat",
+
+    question:
+      "You suspect an employee is acting maliciously and potentially compromising security. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect the employee's system from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  } ,{
+    title: "Advanced Persistent Threat (APT)",
+
+    question:
+      "You suspect your organization is under an Advanced Persistent Threat (APT) attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+  },{
+    title: "Zero-Day Exploit",
+
+    question:
+      "Your organization has discovered a zero-day exploit. What is the best course of action?",
+    choices: [
+      "Ignore the exploit",
+      "Apply the available security patch immediately",
+      "Report the exploit to the software vendor",
+      "Wait for more information before taking any action"
+    ],
+    correctChoice: 1
+  } ,{
+    title: "Social Engineering Attack",
+    question:
+      "You suspect your organization is under a Social Engineering attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } ,{
+    title: "Brute Force Attack",
+    question:
+      "You notice multiple failed login attempts on your account. What is the best course of action?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } ,{
+
   }
 ];
 
@@ -236,5 +382,187 @@ const hardIncidents = [
     ],
 
     correctChoice: 1
+  } ,{
+    title: "Zero-Day Exploit",
+
+    question:
+      "Your organization has discovered a zero-day exploit. What is the best course of action?",
+    choices: [
+      "Ignore the exploit",
+      "Apply the available security patch immediately",
+      "Report the exploit to the software vendor",
+      "Wait for more information before taking any action"
+    ],
+    correctChoice: 1  
+  } ,{
+    title: "Insider Threat",
+    question:
+      "You suspect an employee is acting maliciously and potentially compromising security. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect the employee's system from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  },{
+    title: "Ransomware Attack",
+    question:
+      "Your organization is under a ransomware attack. What is the best course of action?",
+    choices: [
+      "Pay the ransom to restore your files",
+      "Isolate the affected systems and notify your supervisor",
+      "Attempt to remove the ransomware yourself",
+      "Continue with your regular activities"
+    ],
+    correctChoice: 1
+  } ,{
+    title: "Denial of Service (DoS) Attack",
+    question:
+      "Your organization is experiencing a Denial of Service (DoS) attack. What is the best course of action?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1      
+
+  } , {
+    title: "Social Engineering Attack",
+    question:
+      "You suspect your organization is under a Social Engineering attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Brute Force Attack",
+    question:
+      "You notice multiple failed login attempts on your account. What is the best course of action?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Phishing Attack",
+    question:
+      "You receive an email that appears to be from a trusted source but contains suspicious links or attachments. What is the best course of action?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Malware Infection",
+    question:
+      "Your computer is running slow and you notice unusual pop-ups. What is the best course of action?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Data Exfiltration",
+    question:
+      "You suspect that sensitive data is being exfiltrated from your organization. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+title: "Man-in-the-Middle Attack",
+    question:
+      "You suspect your organization is under a Man-in-the-Middle attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } ,{
+    title: "SQL Injection Attack",
+    question:
+      "You suspect your organization is under a SQL Injection attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Cross-Site Scripting (XSS) Attack",
+    question:
+      "You suspect your organization is under a Cross-Site Scripting (XSS) attack. What should you do?",        
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Man-in-the-Middle Attack",
+    question:
+      "You suspect your organization is under a Man-in-the-Middle attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } ,{
+    title: "SQL Injection Attack",
+    question:
+      "You suspect your organization is under a SQL Injection attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Cross-Site Scripting (XSS) Attack",
+    question:
+      "You suspect your organization is under a Cross-Site Scripting (XSS) attack. What should you do?",        
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } , {
+    title: "Man-in-the-Middle Attack",
+    question:
+      "You suspect your organization is under a Man-in-the-Middle attack. What should you do?",
+    choices: [
+      "Continue with your regular activities",
+      "Immediately disconnect affected systems from the network",
+      "Notify your supervisor and wait for further instructions",
+      "Attempt to identify and neutralize the threat yourself"
+    ],
+    correctChoice: 1
+  } ,{
+
   }
+   
+  
 ];

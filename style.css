@@ -6,7 +6,7 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #07131f;
   color: white;
 
@@ -17,7 +17,7 @@ body {
 
 .game-container {
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
 }
 
 .screen {
@@ -55,28 +55,76 @@ h3 {
   color: #c4d7e3;
 }
 
+.system-status {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 25px 0 30px;
+  color: #c4d7e3;
+  font-size: 15px;
+}
+
 /* Difficulty buttons */
 
 .difficulty-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  align-items: stretch;
+  gap: 18px;
   margin-top: 25px;
 }
 
 .difficulty-btn {
-  min-width: 140px;
-  padding: 15px 20px;
+  min-height: 220px;
+  width: 280px;
+  padding: 20px;
+
   border: 1px solid #2dd4ff;
   border-radius: 8px;
   background-color: #102c40;
   color: white;
-  font-size: 17px;
+
+  font-family: "Inter", sans-serif;
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
 }
 
 .difficulty-btn:hover {
   background-color: #17425d;
+}
+
+.difficulty-btn .icon {
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.difficulty-btn strong {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+
+  font-size: 21px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.difficulty-btn small {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+
+  color: #c4d7e3;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 #easy-btn {
@@ -166,6 +214,7 @@ h3 {
   border-radius: 8px;
   background-color: #102c40;
   color: white;
+  font-family: "Inter", sans-serif;
   font-size: 17px;
   line-height: 1.4;
   text-align: left;
@@ -215,6 +264,7 @@ h3 {
   border-radius: 8px;
   background-color: #37e68a;
   color: #06130c;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -245,6 +295,12 @@ h3 {
 
 /* Mobile */
 
+@media (max-width: 900px) {
+  .difficulty-buttons {
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 700px) {
   .screen {
     padding: 20px;
@@ -257,6 +313,12 @@ h3 {
   .difficulty-buttons,
   .game-header {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .difficulty-btn {
+    width: 100%;
+    max-width: 320px;
   }
 
   #answer-container {

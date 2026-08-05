@@ -33,48 +33,71 @@
   <main class="game-container">
 
     <!-- Start Screen -->
-    <section id="start-screen" class="screen">
+<section id="start-screen" class="screen">
 
-      <h1>CyberShield</h1>
+  <h1>CyberShield</h1>
 
-      <h2>Incident Response Challenge</h2>
+  <h2>Cyber Incident Response Simulator</h2>
 
-      <p id="game-description">
+  <p id="game-description">
+    Choose your role. Face the threat. Defend the organization.
+  </p>
 
-Analyze real-world cybersecurity scenarios and make the right response before time runs out.
-      </p>
+  <div class="system-status">
+    <span>🟢 Systems Online</span>
+    <span>🛡 Threat Monitor Active</span>
+    <span>⚡ Ready for Deployment</span>
+  </div>
 
-      <h3>Select Difficulty</h3>
+  <h3>Select Your Mission</h3>
 
-      <div class="difficulty-buttons">
+  <div class="difficulty-buttons">
 
-        <button
-          id="easy-btn"
-          class="difficulty-btn"
-          type="button"
-        >
-          Easy
-        </button>
+    <button
+      id="easy-btn"
+      class="difficulty-btn"
+      type="button"
+    >
+      <div class="icon">🟢</div>
 
-        <button
-          id="medium-btn"
-          class="difficulty-btn"
-          type="button"
-        >
-          Medium
-        </button>
+      <strong>Security Trainee</strong>
 
-        <button
-          id="hard-btn"
-          class="difficulty-btn"
-          type="button"
-        >
-          Hard
-        </button>
+      <small>
+        Learn to recognize everyday cyber threats.
+      </small>
+    </button>
 
-      </div>
+    <button
+      id="medium-btn"
+      class="difficulty-btn"
+      type="button"
+    >
+      <div class="icon">🟡</div>
 
-    </section>
+      <strong>Cyber Analyst</strong>
+
+      <small>
+        Analyze security alerts and investigate incidents.
+      </small>
+    </button>
+
+    <button
+      id="hard-btn"
+      class="difficulty-btn"
+      type="button"
+    >
+      <div class="icon">🔴</div>
+
+      <strong>Security Expert</strong>
+
+      <small>
+        Respond to advanced threats and protect critical systems.
+      </small>
+    </button>
+
+  </div>
+
+</section>
 
     <!-- Game Screen -->
     <section id="game-screen" class="screen hidden">

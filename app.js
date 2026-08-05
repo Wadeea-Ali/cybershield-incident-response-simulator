@@ -18,15 +18,20 @@ const hardButton = document.querySelector("#hard-btn");
 
 const finalMessage = document.querySelector("#final-message");
 const finalScore = document.querySelector("#final-score");
-const restartButton = document.querySelector("#restart-btn");
+const  restartButton = document.querySelector("#restart-btn");
 
 let selectedDifficulty;
 let currentIncidentIndex = 0;
 let currentIncidents;
 let score = 0;
 let timeLimit;
+let winSound;
+let loseSound;
+let timerSound;
 
 const timer = new easytimer.Timer();
+
+
 
 /* ----------------------------- Event Listeners ----------------------------- */
 
@@ -38,10 +43,18 @@ nextButton.addEventListener("click", nextIncident);
 restartButton.addEventListener("click", restartGame);
 
 timer.addEventListener("secondsUpdated", function () {
-  timerDisplay.textContent = `Time: ${timer.getTimeValues().seconds}`;
+  const seconds = timer.getTimeValues().seconds;
+
+  timerDisplay.textContent = `Time: ${seconds}`;
+
+  if (seconds > 0 && timerSound) {
+    timerSound.stop();
+    timerSound.play();
+  }
 });
 
 timer.addEventListener("targetAchieved", function () {
+  timerSound.stop();
   feedback.textContent = "Time's Up! Threat Escalated";
 
   answerButtons.forEach((button) => {
@@ -52,7 +65,30 @@ timer.addEventListener("targetAchieved", function () {
 });
 
 /* -------------------------------- Functions -------------------------------- */
+function unlockAudio() {
+  timerSound = new Howl({
+  src: ["sounds/timer.wav"],
+  volume: 0.5,
+  preload: true
+});
+  if (!winSound) {
+    winSound = new Howl({
+      src: ["sounds/win.wav"],
+      volume: 1,
+      preload: true
+    });
 
+    loseSound = new Howl({
+      src: ["sounds/lose.wav"],
+      volume: 1,
+      preload: true
+    });
+  }
+
+  if (Howler.ctx && Howler.ctx.state === "suspended") {
+    Howler.ctx.resume();
+  }
+}
 function displayIncident(incident) {
   incidentQuestion.textContent = incident.question;
 
@@ -76,6 +112,7 @@ function displayIncident(incident) {
 
 function checkAnswer(selectedAnswer, correctAnswer) {
   timer.stop();
+  timerSound.stop();
 
   if (selectedAnswer === correctAnswer) {
     feedback.textContent = "Incident Resolved!";
@@ -105,6 +142,9 @@ function nextIncident() {
 
 function showEndScreen() {
   timer.stop();
+  if (timerSound) {
+  timerSound.stop();
+}
 
   finalScore.textContent =
     `Final Score: ${score} out of ${currentIncidents.length}`;
@@ -112,9 +152,13 @@ function showEndScreen() {
   if (score >= Math.ceil(currentIncidents.length * 0.7)) {
     finalMessage.textContent =
       "Mission Successful! Company Secured";
+       winSound.stop();
+    winSound.play();
   } else {
     finalMessage.textContent =
       "Mission Failed! Company Compromised";
+      loseSound.stop();
+      loseSound.play();
   }
 
   gameScreen.classList.add("hidden");
@@ -141,6 +185,7 @@ function startTimer() {
 }
 
 function startGame(event) {
+ unlockAudio();
   score = 0;
   currentIncidentIndex = 0;
   selectedDifficulty = event.target.id;
@@ -180,6 +225,9 @@ function startGame(event) {
 
 function restartGame() {
   timer.stop();
+  if (timerSound) {
+  timerSound.stop();
+}
 
   score = 0;
   currentIncidentIndex = 0;

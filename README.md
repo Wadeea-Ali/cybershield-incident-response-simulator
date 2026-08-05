@@ -1,156 +1,102 @@
-# 🛡️ CyberShield: Incident Response Simulator
+# 🛡️ CyberShield
 
-## Pseudocode
-
-### Start
-
-- Create three difficulty levels:
-  - Easy
-  - Medium
-  - Hard
-
-- Create **20 cybersecurity incidents** for each difficulty level.
-
-- Each incident contains:
-  - Incident description
-  - Four answer choices
-  - Correct answer
-
-### Create Variables
-
-- Score
-- Current Incident
-- Selected Difficulty
-- Timer
-- Incident Number
-
-### Start Screen
-
-- Display the Start Screen.
-- Display the three difficulty levels:
-  - Easy
-  - Medium
-  - Hard
-- Wait for the player to select a difficulty.
-
-### When a Difficulty is Selected
-
-- Save the selected difficulty.
-- Load the 20 incidents for the selected difficulty.
-- Shuffle the incidents into a random order.
-- Set the score to **0**.
-- Set the incident number to **1**.
-- Display the first incident.
+A web-based cybersecurity incident response simulator designed to help users improve their cyber awareness through interactive scenarios and timed decision-making.
 
 ---
 
-## Game Loop
+## ✨ Features
 
-### For Each Incident
-
-Display:
-
-- Incident description
-- Four answer choices
-- Current score
-- **Security Incident X of 20**
-
-### Set Timer
-
-- Easy → 20 seconds
-- Medium → 15 seconds
-- Hard → 10 seconds
-
-Start the timer.
-
-Wait for the player to select an answer.
-
-### If the Player Answers Before Time Runs Out
-
-Stop the timer.
-
-#### If the answer is correct:
-
-- Increase the score by **1**.
-- Display:
-
-```
-✅ Incident Resolved
-```
-
-- Play the correct-answer sound.
-
-#### Otherwise:
-
-- Display:
-
-```
-🚨 Security Breach
-```
-
-- Play the incorrect-answer sound.
-
-### If the Timer Reaches Zero
-
-Display:
-
-```
-⏰ Time's Up! Threat Escalated
-```
-
-- Play the incorrect-answer sound.
-
-### Continue
-
-- Disable the answer choices.
-- Display the **Next Incident** button.
-
-When the player clicks **Next Incident**:
-
-- Increase the incident number by **1**.
-
-If there are incidents remaining:
-
-- Reset the timer.
-- Display the next incident.
-
-Otherwise:
-
-- End the game.
+- 🎮 Three difficulty levels
+  - 🟢 Security Trainee
+  - 🟡 Cyber Analyst
+  - 🔴 Security Expert
+- 🎲 Randomized incidents every game
+- ⏱️ Countdown timer for each question
+- 📊 Live score tracking
+- 🔊 Sound effects for correct, wrong, timer, win, and lose
+- 🏆 Final results screen
+- 💻 Responsive user interface
 
 ---
 
-# End Game
+## 🛠️ Built With
 
-Stop the timer.
+- 🌐 HTML5
+- 🎨 CSS3
+- ⚙️ JavaScript (ES6)
+- ⏲️ EasyTimer.js
+- 🔈 Howler.js
 
-Display the player's final score out of **20**.
+---
 
-### Win Condition
+## 📁 Project Structure
 
-If the player scores **14 or more**:
-
+```text
+CyberShield/
+│
+├── 📄 index.html
+├── 🎨 style.css
+├── ⚙️ app.js
+├── 📚 data.js
+│
+└── 🔊 sounds/
+    ├── correct.wav
+    ├── wrong.wav
+    ├── timer.wav
+    ├── win.wav
+    └── lose.wav
 ```
-🏆 Mission Successful!
-Company Secured
-```
 
-### Lose Condition
+---
 
-Otherwise:
+## 🚀 How to Run
 
-```
-💀 Mission Failed!
-Company Compromised
-```
+1. Download or clone the project.
+2. Open the project in Visual Studio Code.
+3. Start **Live Server**.
+4. Select a difficulty level.
+5. Answer each incident before the timer runs out.
+6. View your final score at the end of the game.
 
-Display the **Restart** button.
+---
 
-When the player clicks **Restart**:
+## 🎯 Difficulty Levels
 
-- Reset the score.
-- Reset the incident number.
-- Reset the timer.
-- Return to the difficulty selection screen.
+### 🟢 Security Trainee
+Basic cybersecurity awareness and everyday online threats.
 
-## End
+### 🟡 Cyber Analyst
+Intermediate security incidents that require investigation and analysis.
+
+### 🔴 Security Expert
+Advanced cybersecurity scenarios that require quick and accurate decisions.
+
+---
+
+## 📋 Game Rules
+
+- 📌 Each game contains **20 incidents**.
+- ✅ Every question has **one correct answer**.
+- ⏰ Every incident has a time limit.
+- ⭐ Correct answers increase your score.
+- ❌ Running out of time counts as a failed incident.
+- 🏁 Your final score is displayed after completing all incidents.
+
+---
+
+## 🔮 Future Improvements
+
+- 🏅 Leaderboard
+- 💡 Hint system
+- 📚 More cybersecurity scenarios
+- ⏳ Multiple timer options
+- 👤 User login and saved progress
+
+---
+
+## 👨‍💻 Author
+
+**Wadeea Ali**
+
+🎓 Cybersecurity Graduate  
+🏫 University of Bahrain

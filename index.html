@@ -10,7 +10,6 @@
 
   <title>CyberShield</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -24,7 +23,6 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,71 +31,66 @@
   <main class="game-container">
 
     <!-- Start Screen -->
-<section id="start-screen" class="screen">
+    <section id="start-screen" class="screen">
 
-  <h1>CyberShield</h1>
+      <h1>CyberShield</h1>
 
-  <h2>Cyber Incident Response Simulator</h2>
+      <h2>Cyber Incident Response Simulator</h2>
 
-  <p id="game-description">
-    Choose your role. Face the threat. Defend the organization.
-  </p>
+      <p id="game-description">
+        Choose your role. Face the threat. Defend the organization.
+      </p>
 
-  <div class="system-status">
-    <span>🟢 Systems Online</span>
-    <span>🛡 Threat Monitor Active</span>
-    <span>⚡ Ready for Deployment</span>
-  </div>
+      
+      <h3>Select Your Mission</h3>
 
-  <h3>Select Your Mission</h3>
+      <div class="difficulty-buttons">
 
-  <div class="difficulty-buttons">
+        <button
+          id="easy-btn"
+          class="difficulty-btn"
+          type="button"
+        >
+          <div class="icon">🟢</div>
 
-    <button
-      id="easy-btn"
-      class="difficulty-btn"
-      type="button"
-    >
-      <div class="icon">🟢</div>
+          <strong>Security Trainee</strong>
 
-      <strong>Security Trainee</strong>
+          <small>
+            Learn to recognize everyday cyber threats.
+          </small>
+        </button>
 
-      <small>
-        Learn to recognize everyday cyber threats.
-      </small>
-    </button>
+        <button
+          id="medium-btn"
+          class="difficulty-btn"
+          type="button"
+        >
+          <div class="icon">🟡</div>
 
-    <button
-      id="medium-btn"
-      class="difficulty-btn"
-      type="button"
-    >
-      <div class="icon">🟡</div>
+          <strong>Cyber Analyst</strong>
 
-      <strong>Cyber Analyst</strong>
+          <small>
+            Analyze security alerts and investigate incidents.
+          </small>
+        </button>
 
-      <small>
-        Analyze security alerts and investigate incidents.
-      </small>
-    </button>
+        <button
+          id="hard-btn"
+          class="difficulty-btn"
+          type="button"
+        >
+          <div class="icon">🔴</div>
 
-    <button
-      id="hard-btn"
-      class="difficulty-btn"
-      type="button"
-    >
-      <div class="icon">🔴</div>
+          <strong>Security Expert</strong>
 
-      <strong>Security Expert</strong>
+          <small>
+            Respond to advanced threats and protect critical systems.
+          </small>
+        </button>
 
-      <small>
-        Respond to advanced threats and protect critical systems.
-      </small>
-    </button>
+      </div>
 
-  </div>
-
-</section>
+    </section>
 
     <!-- Game Screen -->
     <section id="game-screen" class="screen hidden">
@@ -196,15 +189,12 @@
 
   </main>
 
-  <!-- EasyTimer library -->
   <script src="https://cdn.jsdelivr.net/npm/easytimer.js@4.6.0/dist/easytimer.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
-  <!-- Incident data -->
   <script src="data.js"></script>
 
-  <!-- Main JavaScript -->
   <script src="app.js"></script>
 
 </body>

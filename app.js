@@ -28,6 +28,8 @@ let timeLimit;
 let winSound;
 let loseSound;
 let timerSound;
+let correctSound;
+let wrongSound;
 
 const timer = new easytimer.Timer();
 
@@ -66,11 +68,6 @@ timer.addEventListener("targetAchieved", function () {
 
 /* -------------------------------- Functions -------------------------------- */
 function unlockAudio() {
-  timerSound = new Howl({
-  src: ["sounds/timer.wav"],
-  volume: 0.5,
-  preload: true
-});
   if (!winSound) {
     winSound = new Howl({
       src: ["sounds/win.wav"],
@@ -81,6 +78,24 @@ function unlockAudio() {
     loseSound = new Howl({
       src: ["sounds/lose.wav"],
       volume: 1,
+      preload: true
+    });
+
+    timerSound = new Howl({
+      src: ["sounds/timer.wav"],
+      volume: 0.5,
+      preload: true
+    });
+
+    correctSound = new Howl({
+      src: ["sounds/correct.wav"],
+      volume: 0.8,
+      preload: true
+    });
+
+    wrongSound = new Howl({
+      src: ["sounds/wrong.wav"],
+      volume: 0.8,
       preload: true
     });
   }
@@ -112,13 +127,22 @@ function displayIncident(incident) {
 
 function checkAnswer(selectedAnswer, correctAnswer) {
   timer.stop();
-  timerSound.stop();
+
+  if (timerSound) {
+    timerSound.stop();
+  }
 
   if (selectedAnswer === correctAnswer) {
     feedback.textContent = "Incident Resolved!";
     score++;
+
+    correctSound.stop();
+    correctSound.play();
   } else {
     feedback.textContent = "Security Breach!";
+
+    wrongSound.stop();
+    wrongSound.play();
   }
 
   scoreDisplay.textContent = `Score: ${score}`;
@@ -188,7 +212,7 @@ function startGame(event) {
  unlockAudio();
   score = 0;
   currentIncidentIndex = 0;
-  selectedDifficulty = event.target.id;
+  selectedDifficulty = event.currentTarget.id;
 
   scoreDisplay.textContent = "Score: 0";
   feedback.textContent = "";
